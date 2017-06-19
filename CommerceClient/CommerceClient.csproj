@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BA55FB5-5F02-4E4A-AF04-FFB973A07D1C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommerceClient</RootNamespace>
+    <AssemblyName>CommerceClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MoviePageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CheckoutModel.cs" />
+    <Compile Include="Models\ImdEntity.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ReceiptModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CartServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CheckoutServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HomeServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LoginServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DesignTemplateCS\Content\images\AddToCart.png" />
+    <Content Include="DesignTemplateCS\Content\images\Banner.gif" />
+    <Content Include="DesignTemplateCS\Content\images\banner_1.png" />
+    <Content Include="DesignTemplateCS\Content\images\banner_2.png" />
+    <Content Include="DesignTemplateCS\Content\images\banner_btn.png" />
+    <Content Include="DesignTemplateCS\Content\images\bg.png" />
+    <Content Include="DesignTemplateCS\Content\images\block.png" />
+    <Content Include="DesignTemplateCS\Content\images\block_line.png" />
+    <Content Include="DesignTemplateCS\Content\images\cell_bg.png" />
+    <Content Include="DesignTemplateCS\Content\images\content_bg.png" />
+    <Content Include="DesignTemplateCS\Content\images\content_right_bg.gif" />
+    <Content Include="DesignTemplateCS\Content\images\content_right_footer.gif" />
+    <Content Include="DesignTemplateCS\Content\images\content_right_header.gif" />
+    <Content Include="DesignTemplateCS\Content\images\display_btn.png" />
+    <Content Include="DesignTemplateCS\Content\images\item_bg.png" />
+    <Content Include="DesignTemplateCS\Content\images\logo.gif" />
+    <Content Include="DesignTemplateCS\Content\images\logo.png" />
+    <Content Include="DesignTemplateCS\Content\images\menu_bg.png" />
+    <Content Include="DesignTemplateCS\Content\images\search_btn.png" />
+    <Content Include="DesignTemplateCS\Content\images\Xbox360.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\xbox360Halo3EditionConsole.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\xbox360HardDrive.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\xbox360HDMICable.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\Xbox360Headset.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\Xbox360MemoryUnit.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\xbox360MessengerKit.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\Xbox360WheelController.jpg" />
+    <Content Include="DesignTemplateCS\Content\images\Xbox360WirelessController.jpg" />
+    <Content Include="DesignTemplateCS\Content\Site.css" />
+    <Content Include="DesignTemplateCS\Content\Style.css" />
+    <Content Include="DesignTemplateCS\Views\Home\Index.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="HTML5 Audio\freehtml5audio\contact.html" />
+    <Content Include="HTML5 Audio\freehtml5audio\css\style.css" />
+    <Content Include="HTML5 Audio\freehtml5audio\fonts\Pacifico SIL OFL Font License 1.1.txt" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\header.jpg" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\home_1.jpg" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\home_1_1_830x450.jpg" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\home_2.jpg" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\home_2_830x450.jpg" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\jw_1_170x170.jpg" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\jw_5_200x200_150x150.jpg" />
+    <Content Include="HTML5 Audio\freehtml5audio\images\transparent.png" />
+    <Content Include="HTML5 Audio\freehtml5audio\index.html" />
+    <Content Include="HTML5 Audio\freehtml5audio\js\image_slide.js" />
+    <Content Include="HTML5 Audio\freehtml5audio\js\jquery.min.js" />
+    <Content Include="HTML5 Audio\freehtml5audio\js\modernizr-1.5.min.js" />
+    <Content Include="HTML5 Audio\freehtml5audio\ourwork.html" />
+    <Content Include="HTML5 Audio\freehtml5audio\projects.html" />
+    <Content Include="HTML5 Audio\freehtml5audio\testimonials.html" />
+    <Content Include="ImagesMovies\Avengers_1_200x200.jpg" />
+    <Content Include="ImagesMovies\Avengers_1_200x200_200x250.jpg" />
+    <Content Include="ImagesMovies\Avengers_70x70.jpg" />
+    <Content Include="ImagesMovies\frontpage\Action170x170.jpg" />
+    <Content Include="ImagesMovies\frontpage\comic%281%29.jpg" />
+    <Content Include="ImagesMovies\frontpage\horror170x170.jpg" />
+    <Content Include="ImagesMovies\frontpage\images_70x70.png" />
+    <Content Include="ImagesMovies\frontpage\suspence_170x170.jpg" />
+    <Content Include="ImagesMovies\images.png" />
+    <Content Include="ImagesMovies\jobs_1_200x200.jpg" />
+    <Content Include="ImagesMovies\jobs_1_200x200_200x250.jpg" />
+    <Content Include="ImagesMovies\jobs_2_70x70.jpg" />
+    <Content Include="ImagesMovies\jw_1_170x170.jpg" />
+    <Content Include="ImagesMovies\jw_1_300x300.jpg" />
+    <Content Include="ImagesMovies\jw_3_70x70.jpg" />
+    <Content Include="ImagesMovies\jw_4_200x250.jpg" />
+    <Content Include="ImagesMovies\jw_5_200x200.jpg" />
+    <Content Include="ImagesMovies\jw_5_200x200_150x150.jpg" />
+    <Content Include="ImagesMovies\Sherlock_1_200x200.jpg" />
+    <Content Include="ImagesMovies\Sherlock_1_200x200_200x250.jpg" />
+    <Content Include="ImagesMovies\Sherlock_2_70x70.jpg" />
+    <Content Include="Movies\ManishaTayal_117055_Duet.mp4" />
+    <Content Include="Movies\Wildlife_CLIPCHAMP_keep.mp4" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="DesignTemplateCS\Content\images\pspbrwse.jbf" />
+    <Content Include="DesignTemplateCS\Views\Shared\Site.Master" />
+    <Content Include="HTML5 Audio\freehtml5audio\fonts\Pacifico-webfont.eot" />
+    <Content Include="HTML5 Audio\freehtml5audio\fonts\Pacifico-webfont.ttf" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Service References\CartServiceReference\CommerceClient.CartServiceReference.Carttype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CartServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\CartServiceReference\configuration.svcinfo" />
+    <None Include="Service References\CartServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\CheckoutServiceReference\CommerceClient.CheckoutServiceReference.FinalOrdertype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CheckoutServiceReference\CommerceClient.CheckoutServiceReference.Ordertype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CartServiceReference\ServiceCart.wsdl" />
+    <None Include="Service References\CheckoutServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\CheckoutServiceReference\configuration.svcinfo" />
+    <None Include="Service References\CheckoutServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CheckoutServiceReference\ServiceCheckout.wsdl" />
+    <Content Include="Service References\HomeServiceReference\CommerceClient.HomeServiceReference.Producttype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\HomeServiceReference\CommerceClient.HomeServiceReference.ImdbEntityType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\HomeServiceReference\HomeService.wsdl" />
+    <None Include="Service References\HomeServiceReference\HomeService.xsd" />
+    <None Include="Service References\HomeServiceReference\HomeService1.xsd" />
+    <None Include="Service References\HomeServiceReference\HomeService2.xsd" />
+    <None Include="Service References\LoginServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\LoginServiceReference\configuration.svcinfo" />
+    <None Include="Service References\LoginServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HomeServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\HomeServiceReference\configuration.svcinfo" />
+    <None Include="Service References\HomeServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="StyleSheet1.css" />
+    <Content Include="StyleSheet2.css" />
+    <Content Include="StyleSheet3.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Service References\LoginServiceReference\LoginService.wsdl" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\DisplayProduct_ByCategory.cshtml" />
+    <Content Include="Views\MoviePage\MovieReview.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Checkout\Checkout.cshtml" />
+    <Content Include="Views\Checkout\FinalBuy.cshtml" />
+    <Content Include="Views\Checkout\Delete.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\AddToCart.cshtml" />
+    <Content Include="Views\Login\SignUp.cshtml" />
+    <Content Include="Views\Login\Authorization.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
+    <Content Include="Views\Shared\_Layout3.cshtml" />
+    <Content Include="Views\Shared\_Layout4.cshtml" />
+    <Content Include="Views\Home\AllMoviePage.cshtml" />
+    <Content Include="Views\Shared\PleaseLogin.cshtml" />
+    <Content Include="Views\Login\InvalidCredentials.cshtml" />
+    <Content Include="Views\Cart\Proceed.cshtml" />
+    <Content Include="Views\Cart\QuantityPlease.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CartServiceReference\" />
+    <WCFMetadataStorage Include="Service References\CheckoutServiceReference\" />
+    <WCFMetadataStorage Include="Service References\HomeServiceReference\" />
+    <WCFMetadataStorage Include="Service References\LoginServiceReference\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53388</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53388/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

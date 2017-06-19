@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceCheckout" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/NewCommerceService" />
+      <xs:element name="ProceedTOCheckout">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProceedTOCheckoutResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/NewCommerceService" minOccurs="0" name="ProceedTOCheckoutResult" nillable="true" type="q1:ArrayOfOrdertype" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DisplayOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DisplayOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/NewCommerceService" minOccurs="0" name="DisplayOrderResult" nillable="true" type="q2:ArrayOfOrdertype" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FinalBuy">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FinalBuyResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/NewCommerceService" minOccurs="0" name="FinalBuyResult" nillable="true" type="q3:ArrayOfFinalOrdertype" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/NewCommerceService" minOccurs="0" name="getOrderResult" nillable="true" type="q4:Ordertype" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="deleteOrderResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NewCommerceService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NewCommerceService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfOrdertype">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Ordertype" nillable="true" type="tns:Ordertype" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfOrdertype" nillable="true" type="tns:ArrayOfOrdertype" />
+      <xs:complexType name="Ordertype">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApprovedStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+          <xs:element minOccurs="0" name="SumPrice" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SumQuantity" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Ordertype" nillable="true" type="tns:Ordertype" />
+      <xs:complexType name="ArrayOfFinalOrdertype">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FinalOrdertype" nillable="true" type="tns:FinalOrdertype" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfFinalOrdertype" nillable="true" type="tns:ArrayOfFinalOrdertype" />
+      <xs:complexType name="FinalOrdertype">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FinalOrderID" type="xs:int" />
+          <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ShippingDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SumPrice" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SumQuantity" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FinalOrdertype" nillable="true" type="tns:FinalOrdertype" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceCheckout_ProceedTOCheckout_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProceedTOCheckout" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_ProceedTOCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProceedTOCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_DisplayOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayOrder" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_DisplayOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisplayOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_FinalBuy_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinalBuy" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_FinalBuy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinalBuyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_getOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrder" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_getOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_deleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCheckout_deleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceCheckout">
+    <wsdl:operation name="ProceedTOCheckout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCheckout/ProceedTOCheckout" message="tns:IServiceCheckout_ProceedTOCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCheckout/ProceedTOCheckoutResponse" message="tns:IServiceCheckout_ProceedTOCheckout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCheckout/DisplayOrder" message="tns:IServiceCheckout_DisplayOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCheckout/DisplayOrderResponse" message="tns:IServiceCheckout_DisplayOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalBuy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCheckout/FinalBuy" message="tns:IServiceCheckout_FinalBuy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCheckout/FinalBuyResponse" message="tns:IServiceCheckout_FinalBuy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCheckout/getOrder" message="tns:IServiceCheckout_getOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCheckout/getOrderResponse" message="tns:IServiceCheckout_getOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCheckout/deleteOrder" message="tns:IServiceCheckout_deleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCheckout/deleteOrderResponse" message="tns:IServiceCheckout_deleteOrder_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceCheckout" type="tns:IServiceCheckout">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProceedTOCheckout">
+      <soap:operation soapAction="http://tempuri.org/IServiceCheckout/ProceedTOCheckout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayOrder">
+      <soap:operation soapAction="http://tempuri.org/IServiceCheckout/DisplayOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalBuy">
+      <soap:operation soapAction="http://tempuri.org/IServiceCheckout/FinalBuy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrder">
+      <soap:operation soapAction="http://tempuri.org/IServiceCheckout/getOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteOrder">
+      <soap:operation soapAction="http://tempuri.org/IServiceCheckout/deleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCheckout">
+    <wsdl:port name="BasicHttpBinding_IServiceCheckout" binding="tns:BasicHttpBinding_IServiceCheckout">
+      <soap:address location="http://localhost:64383/ServiceCheckout.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
